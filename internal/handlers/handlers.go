@@ -16,13 +16,13 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func UploadHandler(w http.ResponseWriter, r *http.Request) {
-	err := r.ParseMultipartForm(10 << 20) // 10 MB
+	err := r.ParseMultipartForm(10 << 20)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
 
-	file, header, err := r.FormFile("file")
+	file, header, err := r.FormFile("myFile") // ← здесь "myFile", не "file"
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
