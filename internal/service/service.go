@@ -4,7 +4,7 @@ import (
 	"errors"
 	"strings"
 
-	"go1fl-sprint6-final/pkg/morse"
+	"github.com/Yandex-Practicum/go1fl-sprint6-final/pkg/morse"
 )
 
 func AutoConvert(input string) (string, error) {
